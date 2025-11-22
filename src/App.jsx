@@ -618,7 +618,7 @@ export default function Portfolio() {
                   <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
                   <input
                     type="text"
-                    name="user_name"
+                    name="name"
                     required
                     className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Your Name"
@@ -628,7 +628,7 @@ export default function Portfolio() {
                   <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
                   <input
                     type="email"
-                    name="user_email"
+                    name="reply_to"
                     required
                     className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                     placeholder="Your Mail ID"
