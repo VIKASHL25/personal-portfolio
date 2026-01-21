@@ -190,10 +190,10 @@ const ProjectCard = ({ project }) => (
     {/* Decorative Gradient Orb */}
     <div className="absolute -top-20 -right-20 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-colors duration-700"></div>
 
-    <div className="p-8 relative z-10 h-full flex flex-col">
-      <div className="flex justify-between items-start mb-6">
-        <div className="p-3 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-white/10 group-hover:border-cyan-500/30 transition-colors shadow-lg">
-          <project.icon size={28} className="text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+    <div className="p-6 relative z-10 h-full flex flex-col">
+      <div className="flex justify-between items-start mb-4">
+        <div className="p-2 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-white/10 group-hover:border-cyan-500/30 transition-colors shadow-lg">
+          <project.icon size={24} className="text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
         </div>
         <a
           href={project.link}
@@ -202,20 +202,20 @@ const ProjectCard = ({ project }) => (
           className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-all transform hover:rotate-45"
           aria-label={`View ${project.title}`}
         >
-          <ExternalLink size={20} />
+          <ExternalLink size={18} />
         </a>
       </div>
 
-      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">{project.title}</h3>
+      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">{project.title}</h3>
 
-      <p className="text-gray-400 mb-6 leading-relaxed flex-grow">
+      <p className="text-sm text-gray-400 mb-4 leading-relaxed flex-grow">
         {project.desc}
       </p>
 
-      <div className="pt-6 border-t border-white/5">
+      <div className="pt-4 border-t border-white/5">
         <div className="flex flex-wrap gap-2">
           {project.tech.split(', ').map((t, i) => (
-            <span key={i} className="text-xs font-medium px-3 py-1 rounded-full bg-cyan-900/20 text-cyan-200 border border-cyan-500/20">
+            <span key={i} className="text-[10px] font-medium px-2 py-1 rounded-full bg-cyan-900/20 text-cyan-200 border border-cyan-500/20">
               {t}
             </span>
           ))}
@@ -282,6 +282,26 @@ export default function Portfolio() {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Update active section on scroll
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollSpy);
+    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
 
   const scrollToSection = (id) => {
@@ -553,7 +573,7 @@ export default function Portfolio() {
       <Section id="projects" className="bg-black/20">
         <div className="max-w-6xl mx-auto">
           <SectionTitle>Innovations</SectionTitle>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
@@ -678,7 +698,7 @@ export default function Portfolio() {
           </div>
 
           <footer className="mt-20 text-gray-600 text-sm font-medium text-center">
-            <p>© {new Date().getFullYear()} Vikas HL. Engineered with React & Tailwind.</p>
+            <p>© {new Date().getFullYear()} Vikas HL — Innovating through code.</p>
           </footer>
         </div>
       </Section>
