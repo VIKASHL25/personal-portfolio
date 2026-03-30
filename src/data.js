@@ -14,7 +14,8 @@ import {
     ShoppingBag,
     Users,
     GraduationCap,
-    Sprout
+    Sprout,
+     
 } from 'lucide-react';
 
 // Import brand icons from react-icons
@@ -36,10 +37,15 @@ import {
     SiHtml5,
     SiCss3,
     SiLangchain,
-    SiLeetcode
+    SiLeetcode,
+    SiMongodb,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { TbApi } from 'react-icons/tb';
+import { Scale } from 'lucide-react';
+import { GiCricketBat } from "react-icons/gi";
+
+
 
 export const personalInfo = {
     name: "Vikas HL",
@@ -78,6 +84,7 @@ export const skills = [
             { name: "Pandas", icon: SiPandas },
             { name: "NumPy", icon: SiNumpy },
             { name: "LangChain", icon: SiLangchain },
+            { name: "LangGraph", icon: SiLangchain },
             { name: "LLM", icon: Brain }
         ]
     },
@@ -105,12 +112,28 @@ export const skills = [
         items: [
             { name: "MySQL", icon: SiMysql },
             { name: "Git", icon: SiGit },
-            { name: "Vercel", icon: SiVercel }
+            { name: "Vercel", icon: SiVercel },
+            {name: "MongoDb", icon: SiMongodb}
         ]
     },
 ];
 
 export const projects = [
+    {
+    title: "Nyaya-Sahayak (AI Legal Assistant)",
+    tech: "Python, Streamlit, MongoDB, ChromaDB, LangChain, LLM (Groq)",
+    desc: "A document-centric AI legal assistant that uses RAG and LLMs to analyze legal documents, simplify complex terms, detect risks, and enable conversational querying with specialized agents.",
+    icon: Scale,
+    link: "https://github.com/VIKASHL25/nyaya-sahayak.git"
+},
+    
+    {
+        title: "DRONA: Cricket Tactical Intelligence Engine",
+        tech: "Python, Streamlit, LLM, Matplotlib, RapidAPI",
+        desc: "An AI-powered cricket analytics system that provides real-time match insights, win probability predictions, and strategic field placement recommendations using simulation models and LLM-based coaching.",
+        icon: GiCricketBat,
+        link: "https://github.com/VIKASHL25/DRONACricketAI.git"
+    },
     {
         title: "AI Tax Guide",
         tech: "Python, React.js, NLP",
@@ -118,13 +141,7 @@ export const projects = [
         icon: Zap,
         link: "https://github.com/VIKASHL25/AI-TAX-GUIDE.git"
     },
-    {
-        title: "AI Gmail Analyzer",
-        tech: "Python, Gmail API, Data Viz",
-        desc: "Productivity tool that mines inbox data to visualize communication patterns. Automates classification and summarization of high-volume email streams.",
-        icon: Mail,
-        link: "https://github.com/VIKASHL25/AI-Powered-Gmail-Analyzer.git"
-    },
+
     {
         title: "Visual Language Summarizer",
         tech: "Ollama VLM, Streamlit, Python",
@@ -132,13 +149,7 @@ export const projects = [
         icon: Sparkles,
         link: "https://github.com/VIKASHL25/Image-Summarization-Using-Ollama-VLM.git"
     },
-    {
-        title: "Deep Colorization GAN",
-        tech: "PyTorch, GANs, CNN",
-        desc: "Generative Adversarial Network capable of hallucinating realistic colors for grayscale historical archives using Lab color-space transformation.",
-        icon: Cpu,
-        link: "https://github.com/VIKASHL25/Black-and-white-image-colorization.git"
-    },
+
     {
         title: "RAG Conversation Engine",
         tech: "Python, LangChain, LLM",
@@ -153,13 +164,7 @@ export const projects = [
         icon: Database,
         link: "https://github.com/VIKASHL25/AI-sql-chatbot.git"
     },
-    {
-        title: "Buffer Calculator",
-        tech: "Java, Android Studio, SQLite3",
-        desc: "An Android application that calculates spatial buffer data and stores results locally using SQLite, designed for efficient geographic analysis and planning.",
-        icon: Calculator,
-        link: "https://github.com/VIKASHL25/BufferCalculator.git"
-    },
+
     {
         title: "YouTube RAG System",
         tech: "Python, OpenAI, YouTube API",
@@ -174,13 +179,7 @@ export const projects = [
         icon: ShoppingBag,
         link: "https://github.com/VIKASHL25/smart-retail-ml.git"
     },
-    {
-        title: "AI Math Solver",
-        tech: "Python, OCR, LLM",
-        desc: "IntelFlow: An educational agent that perceives mathematical problems via computer vision and provides step-by-step solutions.",
-        icon: Calculator,
-        link: "https://github.com/VIKASHL25/Ai-math-solver.git"
-    },
+
     {
         title: "Customer Churn Prediction",
         tech: "Python, Scikit-learn, Pandas",
@@ -188,18 +187,5 @@ export const projects = [
         icon: Users,
         link: "https://github.com/VIKASHL25/Customer-churn-prediction.git"
     },
-    {
-        title: "Student Placement Predictor",
-        tech: "Python, ML, Data Mining",
-        desc: "A forecasting model analyzing academic performance to predict employability outcomes and guide career planning.",
-        icon: GraduationCap,
-        link: "https://github.com/VIKASHL25/STUDENT-PLACEMENT-PREDICTOR.git"
-    },
-    // {
-    //     title: "Agri-Hills Irrigation",
-    //     tech: "Python, ML, IoT Data",
-    //     desc: "A precision agriculture tool leveraging environmental data to forecast irrigation needs and conserve water resources.",
-    //     icon: Sprout,
-    //     link: "https://github.com/VIKASHL25/Irrigation-Prediction.git"
-    // }
+
 ];

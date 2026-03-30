@@ -446,7 +446,6 @@ export default function Portfolio() {
               >
                 <Mail size={24} />
               </button>
-              <SocialButton href={personalInfo.instagram} icon={Instagram} label="Instagram" />
             </div>
           </div>
 
